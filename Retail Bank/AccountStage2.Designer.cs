@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.cmdOpen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.TextHomeAddress = new System.Windows.Forms.TextBox();
+            this.TextAccountNumber = new System.Windows.Forms.TextBox();
+            this.cmbAccountType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Txtfullname = new System.Windows.Forms.TextBox();
-            this.cmdNext = new System.Windows.Forms.Button();
+            this.TextVerifyAccountName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbAccountType = new System.Windows.Forms.ComboBox();
+            this.TxtVerifyEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label7
@@ -47,114 +46,53 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(305, 183);
+            this.label7.Location = new System.Drawing.Point(305, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 17);
-            this.label7.TabIndex = 31;
+            this.label7.TabIndex = 50;
             this.label7.Text = "Account Details";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(435, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 21);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Step 2/2";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(30, 226);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(302, 162);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 17);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Initial Deposit";
+            this.label5.Size = new System.Drawing.Size(197, 21);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Opening Second Account";
             // 
-            // TxtPhoneNumber
+            // cmdOpen
             // 
-            this.TxtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtPhoneNumber.Location = new System.Drawing.Point(30, 251);
-            this.TxtPhoneNumber.Multiline = true;
-            this.TxtPhoneNumber.Name = "TxtPhoneNumber";
-            this.TxtPhoneNumber.Size = new System.Drawing.Size(175, 33);
-            this.TxtPhoneNumber.TabIndex = 28;
+            this.cmdOpen.BackColor = System.Drawing.Color.White;
+            this.cmdOpen.Location = new System.Drawing.Point(55, 271);
+            this.cmdOpen.Name = "cmdOpen";
+            this.cmdOpen.Size = new System.Drawing.Size(120, 42);
+            this.cmdOpen.TabIndex = 48;
+            this.cmdOpen.Text = "Open Account";
+            this.cmdOpen.UseVisualStyleBackColor = false;
+            this.cmdOpen.Click += new System.EventHandler(this.cmdOpen_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(30, 160);
+            this.label4.Location = new System.Drawing.Point(55, 73);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 17);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Account Pincode";
+            this.label4.Size = new System.Drawing.Size(106, 17);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Account Number";
             // 
-            // TextHomeAddress
+            // TextAccountNumber
             // 
-            this.TextHomeAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextHomeAddress.Location = new System.Drawing.Point(30, 185);
-            this.TextHomeAddress.Multiline = true;
-            this.TextHomeAddress.Name = "TextHomeAddress";
-            this.TextHomeAddress.Size = new System.Drawing.Size(175, 33);
-            this.TextHomeAddress.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(30, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 17);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Account Type";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(30, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Account Name";
-            // 
-            // Txtfullname
-            // 
-            this.Txtfullname.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Txtfullname.Location = new System.Drawing.Point(30, 63);
-            this.Txtfullname.Multiline = true;
-            this.Txtfullname.Name = "Txtfullname";
-            this.Txtfullname.Size = new System.Drawing.Size(170, 33);
-            this.Txtfullname.TabIndex = 22;
-            // 
-            // cmdNext
-            // 
-            this.cmdNext.BackColor = System.Drawing.Color.White;
-            this.cmdNext.Location = new System.Drawing.Point(30, 302);
-            this.cmdNext.Name = "cmdNext";
-            this.cmdNext.Size = new System.Drawing.Size(120, 42);
-            this.cmdNext.TabIndex = 21;
-            this.cmdNext.Text = "Open Account";
-            this.cmdNext.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(302, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 21);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Opening acount";
+            this.TextAccountNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TextAccountNumber.Location = new System.Drawing.Point(55, 98);
+            this.TextAccountNumber.Multiline = true;
+            this.TextAccountNumber.Name = "TextAccountNumber";
+            this.TextAccountNumber.Size = new System.Drawing.Size(170, 33);
+            this.TextAccountNumber.TabIndex = 46;
             // 
             // cmbAccountType
             // 
@@ -162,29 +100,79 @@
             this.cmbAccountType.Items.AddRange(new object[] {
             "Savings Account",
             "Current Account"});
-            this.cmbAccountType.Location = new System.Drawing.Point(30, 129);
+            this.cmbAccountType.Location = new System.Drawing.Point(55, 225);
             this.cmbAccountType.Name = "cmbAccountType";
             this.cmbAccountType.Size = new System.Drawing.Size(170, 23);
-            this.cmbAccountType.TabIndex = 32;
+            this.cmbAccountType.TabIndex = 45;
             this.cmbAccountType.Text = "Select account";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(55, 200);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 17);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Account Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(55, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 17);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Verify Account Name";
+            // 
+            // TextVerifyAccountName
+            // 
+            this.TextVerifyAccountName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TextVerifyAccountName.Location = new System.Drawing.Point(55, 159);
+            this.TextVerifyAccountName.Multiline = true;
+            this.TextVerifyAccountName.Name = "TextVerifyAccountName";
+            this.TextVerifyAccountName.Size = new System.Drawing.Size(170, 33);
+            this.TextVerifyAccountName.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(302, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Verify Email Address";
+            // 
+            // TxtVerifyEmail
+            // 
+            this.TxtVerifyEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtVerifyEmail.Location = new System.Drawing.Point(302, 98);
+            this.TxtVerifyEmail.Multiline = true;
+            this.TxtVerifyEmail.Name = "TxtVerifyEmail";
+            this.TxtVerifyEmail.Size = new System.Drawing.Size(170, 33);
+            this.TxtVerifyEmail.TabIndex = 51;
             // 
             // AccountStage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.Controls.Add(this.cmbAccountType);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TxtVerifyEmail);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TxtPhoneNumber);
+            this.Controls.Add(this.cmdOpen);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TextHomeAddress);
+            this.Controls.Add(this.TextAccountNumber);
+            this.Controls.Add(this.cmbAccountType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Txtfullname);
-            this.Controls.Add(this.cmdNext);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TextVerifyAccountName);
             this.Name = "AccountStage2";
             this.Size = new System.Drawing.Size(555, 387);
             this.ResumeLayout(false);
@@ -195,16 +183,15 @@
         #endregion
 
         private Label label7;
-        private Label label6;
         private Label label5;
-        private TextBox TxtPhoneNumber;
+        private Button cmdOpen;
         private Label label4;
-        private TextBox TextHomeAddress;
+        private TextBox TextAccountNumber;
+        private ComboBox cmbAccountType;
         private Label label3;
         private Label label2;
-        private TextBox Txtfullname;
-        private Button cmdNext;
+        private TextBox TextVerifyAccountName;
         private Label label1;
-        private ComboBox cmbAccountType;
+        private TextBox TxtVerifyEmail;
     }
 }

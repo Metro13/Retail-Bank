@@ -12,6 +12,7 @@ namespace Retail_Bank
     internal class DBConnection
     {
         private int numrows;
+        public string returnvalue;
     
         public string loadConnectionString(string id = "Default")
         {
@@ -37,6 +38,36 @@ namespace Retail_Bank
                 }
                 return numrows;
             }
+        }
+
+        public string ReturnQueryValueExecutor(string query, Dictionary<string, object> args)
+        {
+            try
+            {
+                // database connection using Connection string from AppConfig
+                using (var connection = new SQLiteConnection(ConfigurationManager.ConnectionStrings["Default"].ConnectionString))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        foreach (var pair in args)
+                        {
+                            command.Parameters.AddWithValue(pair.Key, pair.Value);
+                        }
+                        // execute the Query & Returning Number of Rows
+                        returnvalue = command.ExecuteScalar().ToString();
+
+                    }
+                    
+                }
+               
+            }
+            catch(NullReferenceException err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+            return returnvalue;
         }
 
     }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.Data;
+using System.Configuration;
 
 namespace Retail_Bank
 {
@@ -13,8 +16,10 @@ namespace Retail_Bank
         private string accountType;
         private string accountPin;
         private double accountBalance;
+        
 
         private string interestEligibility;
+        DBConnection connection = new DBConnection();
 
 
         public Account()
@@ -67,13 +72,20 @@ namespace Retail_Bank
                 return accountBalance;
             }
         }
-        public void VerifyAccout()
-        {
 
-        }
-        public void ProcessAccount()
-        {
+        //checking the number of accounts in the database
 
+        public string VerifyAccount(string Accountnumber, string Fullname)
+        {
+            string query = "SELECT AccountType FROM UserAccounts WHERE AccountNumber =@AccNumber";
+
+            var args = new Dictionary<string, object>
+            {
+                {"@AccNumber", Accountnumber}
+            };
+
+            return connection.ReturnQueryValueExecutor(query, args);
         }
+     
     }
 }

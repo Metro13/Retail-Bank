@@ -13,6 +13,8 @@ namespace Retail_Bank
     public partial class open_account : UserControl
     {
         Administrator admin = new Administrator();
+        int userID;
+        int accountID;
         public open_account()
         {
             InitializeComponent();
@@ -30,8 +32,6 @@ namespace Retail_Bank
         {
             try
             {
-
-
 
                 if (string.IsNullOrEmpty(Txtfullname.Text) == false
                     && string.IsNullOrEmpty(TxtEmailAddress.Text) == false
@@ -58,9 +58,18 @@ namespace Retail_Bank
 
                     if (Result > 0)
                     {
-                        panelStage1.Visible = false;
-                        panelStage2.Visible = true;
-                        LblAccountName.Text = Txtfullname.Text;
+                        userID = int.Parse(admin.getUserID());
+
+                        if(userID > 0)
+                        {
+                            panelStage1.Visible = false;
+                            panelStage2.Visible = true;
+                            LblAccountName.Text = Txtfullname.Text;
+                        }
+                        else
+                        {
+                            return;
+                        }    
                     }
                     else
                     {
@@ -79,6 +88,18 @@ namespace Retail_Bank
             }
 
         }
+        private Dictionary<string, string> AccountDetails(string accountType)
+        {
+            var AccountData = new Dictionary<string, string>
+            {
+                {"AccountNumber", TxtAccountNumber.Text },
+                {"AccountType",accountType},
+                {"AccountPin", TxtPincode.Text },
+                {"InitialBalance", TxtDeposit.Text},
+            };
+
+            return AccountData;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -88,33 +109,42 @@ namespace Retail_Bank
                     && string.IsNullOrEmpty(TxtPincode.Text) == false
                     && string.IsNullOrEmpty(TxtDeposit.Text) == false)
                 {
-                    //account verification here
+                    //account verification
 
-                    //end 
-                    string? accountType = cmbAccountType.SelectedItem.ToString();
+                    string  accountType = cmbAccountType.SelectedItem.ToString();
+                            
+                    Dictionary<string, string> newAccountData = AccountDetails(accountType);
+                    admin.PairAccountDetails(newAccountData);
 
-                    var AccountData = new Dictionary<string, string>
-                    {
-                        {"AccountNumber", TxtAccountNumber.Text },
-                        {"AccountType",accountType},
-                        {"AccountPin", TxtPincode.Text },
-                        {"InitialBalance", TxtDeposit.Text},
-                    };
+                    int QueryResult = admin.OpenBankAccount();
 
+                     if (QueryResult > 0)
+                     {
 
-                    admin.getAccountDetails(AccountData);
+                        accountID = int.Parse(admin.getAccountID());
 
-                    int QueryResult = admin.OpenAccount();
-
-                    if (QueryResult > 0)
-                    {
-                        MessageBox.Show("Bank Account Opened Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Opps! ran into an error creating bank account");
-                    }
-
+                        if (accountID > 0)
+                        {
+                            int updateAccountsResult = admin.UpdateAddedAccounts(userID, accountID);
+                            if (updateAccountsResult > 0)
+                            {
+                                MessageBox.Show("Bank Account Opened Successfully");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Opps! ran into an error creating account");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Opps ran into an error try check the details");
+                        }
+                     }
+                     else
+                     {
+                        MessageBox.Show("Opps ran into an error try check the details");
+                     }
+                       
                 }
             }
             catch(Exception error)

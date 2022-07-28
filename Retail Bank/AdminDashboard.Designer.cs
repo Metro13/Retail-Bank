@@ -32,9 +32,10 @@
             this.cmdAddAccount = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmdDeposit = new System.Windows.Forms.Button();
+            this.cmdWithdraw = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.cmdExistingAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ActionPanel
@@ -49,7 +50,7 @@
             // cmdAddAccount
             // 
             this.cmdAddAccount.BackColor = System.Drawing.Color.White;
-            this.cmdAddAccount.Location = new System.Drawing.Point(41, 84);
+            this.cmdAddAccount.Location = new System.Drawing.Point(39, 68);
             this.cmdAddAccount.Name = "cmdAddAccount";
             this.cmdAddAccount.Size = new System.Drawing.Size(126, 38);
             this.cmdAddAccount.TabIndex = 1;
@@ -60,12 +61,13 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(41, 149);
+            this.button1.Location = new System.Drawing.Point(39, 184);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 38);
             this.button1.TabIndex = 2;
             this.button1.Text = "Close Account";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -78,35 +80,48 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Logged in as Admin";
             // 
-            // button2
+            // cmdDeposit
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(41, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Process Deposits";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cmdDeposit.BackColor = System.Drawing.Color.White;
+            this.cmdDeposit.Location = new System.Drawing.Point(39, 242);
+            this.cmdDeposit.Name = "cmdDeposit";
+            this.cmdDeposit.Size = new System.Drawing.Size(126, 38);
+            this.cmdDeposit.TabIndex = 4;
+            this.cmdDeposit.Text = "Process Deposits";
+            this.cmdDeposit.UseVisualStyleBackColor = false;
+            this.cmdDeposit.Click += new System.EventHandler(this.cmdDeposit_Click);
             // 
-            // button3
+            // cmdWithdraw
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(41, 279);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 38);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Process Withdrawals";
-            this.button3.UseVisualStyleBackColor = false;
+            this.cmdWithdraw.BackColor = System.Drawing.Color.White;
+            this.cmdWithdraw.Location = new System.Drawing.Point(39, 300);
+            this.cmdWithdraw.Name = "cmdWithdraw";
+            this.cmdWithdraw.Size = new System.Drawing.Size(126, 38);
+            this.cmdWithdraw.TabIndex = 5;
+            this.cmdWithdraw.Text = "Process Withdrawals";
+            this.cmdWithdraw.UseVisualStyleBackColor = false;
+            this.cmdWithdraw.Click += new System.EventHandler(this.cmdWithdraw_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(41, 344);
+            this.button4.Location = new System.Drawing.Point(39, 358);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(126, 38);
             this.button4.TabIndex = 6;
             this.button4.Text = "View Accounts";
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // cmdExistingAccount
+            // 
+            this.cmdExistingAccount.BackColor = System.Drawing.Color.White;
+            this.cmdExistingAccount.Location = new System.Drawing.Point(39, 126);
+            this.cmdExistingAccount.Name = "cmdExistingAccount";
+            this.cmdExistingAccount.Size = new System.Drawing.Size(126, 38);
+            this.cmdExistingAccount.TabIndex = 7;
+            this.cmdExistingAccount.Text = "Add second account";
+            this.cmdExistingAccount.UseVisualStyleBackColor = false;
+            this.cmdExistingAccount.Click += new System.EventHandler(this.cmdExistingAccount_Click);
             // 
             // AdminDashboard
             // 
@@ -114,9 +129,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdExistingAccount);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cmdWithdraw);
+            this.Controls.Add(this.cmdDeposit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmdAddAccount);
@@ -124,6 +140,7 @@
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboard";
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,9 +150,10 @@
         private Button cmdAddAccount;
         private Button button1;
         private Label label1;
-        private Button button2;
-        private Button button3;
+        private Button cmdDeposit;
+        private Button cmdWithdraw;
         private Button button4;
         public Panel ActionPanel;
+        private Button cmdExistingAccount;
     }
 }
