@@ -34,14 +34,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.cmdBypass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdLogin
             // 
             this.cmdLogin.BackColor = System.Drawing.Color.White;
-            this.cmdLogin.Location = new System.Drawing.Point(110, 308);
+            this.cmdLogin.Location = new System.Drawing.Point(59, 323);
             this.cmdLogin.Name = "cmdLogin";
-            this.cmdLogin.Size = new System.Drawing.Size(120, 42);
+            this.cmdLogin.Size = new System.Drawing.Size(92, 42);
             this.cmdLogin.TabIndex = 3;
             this.cmdLogin.Text = "login";
             this.cmdLogin.UseVisualStyleBackColor = false;
@@ -52,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(115, 21);
+            this.label1.Location = new System.Drawing.Point(110, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 21);
             this.label1.TabIndex = 2;
@@ -62,7 +63,7 @@
             // TxtUsername
             // 
             this.TxtUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtUsername.Location = new System.Drawing.Point(56, 167);
+            this.TxtUsername.Location = new System.Drawing.Point(56, 185);
             this.TxtUsername.Multiline = true;
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(229, 35);
@@ -74,7 +75,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(134, 139);
+            this.label2.Location = new System.Drawing.Point(56, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 5;
@@ -86,7 +87,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(134, 215);
+            this.label3.Location = new System.Drawing.Point(59, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 7;
@@ -96,12 +97,23 @@
             // TxtPassword
             // 
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtPassword.Location = new System.Drawing.Point(56, 242);
+            this.TxtPassword.Location = new System.Drawing.Point(56, 260);
             this.TxtPassword.Multiline = true;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(229, 35);
             this.TxtPassword.TabIndex = 6;
             this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
+            // 
+            // cmdBypass
+            // 
+            this.cmdBypass.BackColor = System.Drawing.Color.White;
+            this.cmdBypass.Location = new System.Drawing.Point(165, 323);
+            this.cmdBypass.Name = "cmdBypass";
+            this.cmdBypass.Size = new System.Drawing.Size(120, 42);
+            this.cmdBypass.TabIndex = 8;
+            this.cmdBypass.Text = "Bypass for Testing";
+            this.cmdBypass.UseVisualStyleBackColor = false;
+            this.cmdBypass.Click += new System.EventHandler(this.cmdBypass_Click);
             // 
             // Admin
             // 
@@ -109,6 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(346, 444);
+            this.Controls.Add(this.cmdBypass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.label2);
@@ -131,5 +144,6 @@
         private Label label2;
         private Label label3;
         private TextBox TxtPassword;
+        private Button cmdBypass;
     }
 }

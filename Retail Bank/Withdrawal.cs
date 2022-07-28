@@ -23,6 +23,7 @@ namespace Retail_Bank
             string accountType = cmbAccountType.SelectedItem.ToString();
             string accountnumber = TxtAccountNumber.Text;
             double withdrawAmount = double.Parse(txtWithdrawAmount.Text);
+            string transactionType = "Withdrawal";
 
             if (string.IsNullOrEmpty(accountType) == false && 
                 string.IsNullOrEmpty(accountnumber) == false)
@@ -39,6 +40,8 @@ namespace Retail_Bank
                     if(result > 0)
                     {
                         double remainingBalance = currentBalance - withdrawAmount;
+
+                        admin.updateTransactions(accountnumber, transactionType, withdrawAmount);
 
                         MessageBox.Show("Withdrawal successfull. The remaining balance is " + remainingBalance);
                     }

@@ -9,9 +9,9 @@
 
         private void cmdProceed_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
-            admin.Show();
-            Hide();
+           AccountSelection accountSelection = new AccountSelection();
+           accountSelection.Show();
+           Hide();
         }
     }
 }

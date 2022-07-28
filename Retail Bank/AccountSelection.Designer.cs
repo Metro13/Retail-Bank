@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.cmdStartTransactions = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cmdClientSide = new System.Windows.Forms.Button();
+            this.cmdAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -44,25 +44,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose what to do";
             // 
-            // cmdStartTransactions
+            // cmdClientSide
             // 
-            this.cmdStartTransactions.BackColor = System.Drawing.Color.White;
-            this.cmdStartTransactions.Location = new System.Drawing.Point(69, 196);
-            this.cmdStartTransactions.Name = "cmdStartTransactions";
-            this.cmdStartTransactions.Size = new System.Drawing.Size(212, 42);
-            this.cmdStartTransactions.TabIndex = 1;
-            this.cmdStartTransactions.Text = "Perform Transaction";
-            this.cmdStartTransactions.UseVisualStyleBackColor = false;
+            this.cmdClientSide.BackColor = System.Drawing.Color.White;
+            this.cmdClientSide.Location = new System.Drawing.Point(69, 196);
+            this.cmdClientSide.Name = "cmdClientSide";
+            this.cmdClientSide.Size = new System.Drawing.Size(212, 42);
+            this.cmdClientSide.TabIndex = 1;
+            this.cmdClientSide.Text = "Login as client";
+            this.cmdClientSide.UseVisualStyleBackColor = false;
+            this.cmdClientSide.Click += new System.EventHandler(this.cmdClientSide_Click);
             // 
-            // button2
+            // cmdAdmin
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(69, 257);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 43);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Login as Admin";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cmdAdmin.BackColor = System.Drawing.Color.White;
+            this.cmdAdmin.Location = new System.Drawing.Point(69, 257);
+            this.cmdAdmin.Name = "cmdAdmin";
+            this.cmdAdmin.Size = new System.Drawing.Size(212, 43);
+            this.cmdAdmin.TabIndex = 2;
+            this.cmdAdmin.Text = "Login as Admin";
+            this.cmdAdmin.UseVisualStyleBackColor = false;
+            this.cmdAdmin.Click += new System.EventHandler(this.button2_Click);
             // 
             // AccountSelection
             // 
@@ -70,8 +72,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(363, 438);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.cmdStartTransactions);
+            this.Controls.Add(this.cmdAdmin);
+            this.Controls.Add(this.cmdClientSide);
             this.Controls.Add(this.label1);
             this.Name = "AccountSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -84,7 +86,7 @@
         #endregion
 
         private Label label1;
-        private Button cmdStartTransactions;
-        private Button button2;
+        private Button cmdClientSide;
+        private Button cmdAdmin;
     }
 }

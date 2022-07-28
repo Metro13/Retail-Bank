@@ -97,6 +97,20 @@ namespace Retail_Bank
             return conn.ReturnQueryValueExecutor(query, args);
         }
 
+        public void updateTransactions(string account, string transactionType, double amount)
+        {
+            AccountNumber = account;
+            const string query = "INSERT INTO Transactions (AccountNumber, TransactionType, Amount, Date) VALUES (@account, @transaction, @amount, @date)";
+
+            var args = new Dictionary<string, object>
+            {
+                {"@account", AccountNumber},
+                {"@transaction", transactionType},
+                {"@amount", amount},
+                {"@date",  DateTime.Today.ToString("dd/MM/yy") },
+            };
+            conn.MyCommandExecuter(query, args);
+        }
         public string getAccountID()
         {
             const string query = "SELECT AccountID FROM Account WHERE AccountName = @accname";
@@ -145,7 +159,7 @@ namespace Retail_Bank
                 {
                     {"@Accountname", AccountName},
                     {"@Accountpin", AccountPin},
-                    {"@openingDate", DateTime.Today.Date },
+                    {"@openingDate", DateTime.Today.ToString("dd/MM/yy") },
 
                 };
 
@@ -206,7 +220,6 @@ namespace Retail_Bank
             double withdraw() => remainingBalance = currentBalance - amount;
             withdraw();
 
-
             const string query = "UPDATE UserAccounts SET AccountBalance =@accbalance WHERE AccountNumber = @accnumber AND AccountType=@acctype";
             var args = new Dictionary<string, object>
             {
@@ -214,7 +227,13 @@ namespace Retail_Bank
                 {"@accbalance", remainingBalance},
                 {"@acctype", AccountType},
             };
+
             return conn.MyCommandExecuter(query, args);
         }
+
+        //public DataTable ViewAccounts()
+        //{
+            
+        //}
     }
 }

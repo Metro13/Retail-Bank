@@ -16,5 +16,19 @@ namespace Retail_Bank
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            Hide();
+        }
+
+        private void cmdClientSide_Click(object sender, EventArgs e)
+        {
+            AccountLogin accountLogin = new AccountLogin();
+            accountLogin.Show();
+            Hide();
+        }
     }
 }

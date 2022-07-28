@@ -21,6 +21,7 @@ namespace Retail_Bank
         private void cmdDeposit_Click(object sender, EventArgs e)
         {
             string accountType = cmbAccountType.SelectedItem.ToString();
+            string transactionType = "Deposit";
 
             if (string.IsNullOrEmpty(TxtAccountNumber.Text) == false &&
                 string.IsNullOrEmpty(TxtDepositAmount.Text) == false &&
@@ -38,6 +39,7 @@ namespace Retail_Bank
 
                     if(result > 0)
                     {
+                        admin.updateTransactions(accountnumber, transactionType, depositAmount);
                         MessageBox.Show("Deposit of Mwk" + depositAmount + " to Account number " + accountnumber + " " + accountType + " successfull");
                     }
                     else

@@ -26,7 +26,7 @@ namespace Retail_Bank
 
             if(String.IsNullOrEmpty(userid) == false && String.IsNullOrEmpty(password) == false)
             {
-                int queryResult = 1; // admin.AUthenticateAdmin(userid, password);
+                int queryResult = admin.AUthenticateAdmin(userid, password);
                 if(queryResult > 0)
                 {
                     //redirecting to dashboard
@@ -74,6 +74,18 @@ namespace Retail_Bank
         private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmdBypass_Click(object sender, EventArgs e)
+        {
+            //redirecting to dashboard
+
+            AdminDashboard dashboard = new AdminDashboard();
+            dashboard.Show();
+
+            //hiding the current form
+            Hide();
+            return;
         }
     }
 }
